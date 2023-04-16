@@ -36,10 +36,10 @@ export const createEffectCleaner = <T>(
     const stateModifier = stateModifiers[key];
     result[key] = new Proxy(stateModifier, handler);
     return result;
-  }, {} as T & { cleanEffect: () => void });
+  }, {} as T & { clean: () => void });
 
   // cleans effects
-  proxies.cleanEffect = () => {
+  proxies.clean = () => {
     _stalled = true;
 
     // abort asynchronous requests
