@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "baseUrl": "./src",
+    "moduleResolution": "node",
+    "target": "esnext",
+    "declaration": true,
+    "noImplicitAny": false,
+    "downlevelIteration": true,
+    "resolveJsonModule": true,
+    "sourceMap": true,
+    "noImplicitThis": true,
+    "alwaysStrict": true,
+    "skipLibCheck": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": false,
+    "allowSyntheticDefaultImports": true,
+    "module": "ESNext",
+    "lib": ["dom", "es5", "es2015.collection", "es2015.iterable"]
+  },
+  "include": ["src"],
+  "exclude": ["node_modules"]
+}
