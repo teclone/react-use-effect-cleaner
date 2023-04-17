@@ -10,6 +10,20 @@ export interface CreateEffectCleanerOpts {
    * abort axios based network requests
    */
   cancelTokenSource?: CancelTokenSource;
+
+  /**
+   * object containing timeout ids
+   */
+  timeoutIds?: {
+    [p: string]: number;
+  };
+
+  /**
+   * object containing intervalIds
+   */
+  intervalIds?: {
+    [p: string]: number;
+  };
 }
 
 /**
@@ -21,7 +35,8 @@ export const createEffectCleaner = <T>(
   opts: CreateEffectCleanerOpts
 ) => {
   let _stalled = false;
-  const { abortController, cancelTokenSource } = opts || {};
+  const { abortController, cancelTokenSource, intervalIds, timeoutIds } =
+    opts || {};
 
   const handler = {
     apply(stateModifier, thisArg, argArray) {
@@ -57,6 +72,20 @@ export const createEffectCleaner = <T>(
       }
     } catch (ex) {
       // do nothing
+    }
+
+    // abort set intervals
+    if (intervalIds) {
+      Object.keys(intervalIds).forEach((key) => {
+        clearInterval(intervalIds[key]);
+      });
+    }
+
+    // clear timeouts
+    if (timeoutIds) {
+      Object.keys(timeoutIds).forEach((key) => {
+        clearTimeout(timeoutIds[key]);
+      });
     }
   };
 
