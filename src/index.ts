@@ -84,7 +84,7 @@ export const createEffectCleaner = <T>(
     // clear timeouts
     if (timeoutIds) {
       Object.keys(timeoutIds).forEach((key) => {
-        clearInterval(timeoutIds[key]);
+        clearTimeout(timeoutIds[key]);
       });
     }
   };
