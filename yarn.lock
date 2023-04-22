@@ -1842,10 +1842,10 @@
   dependencies:
     defer-to-connect "^1.0.1"
 
-"@teclone/rollup-all@^1.24.2":
-  version "1.24.2"
-  resolved "https://registry.yarnpkg.com/@teclone/rollup-all/-/rollup-all-1.24.2.tgz#aaeb69d33143088400f4e8cdb1fdd74f44ad71e1"
-  integrity sha512-+RH3dbnNu/FrSZ8kjh7SGEv05j4ZKM98xmJq9fBDPZF2nWRnIMMaDGvYI+Cjfr1tUZeIeWRqd3H5v25y3wvRug==
+"@teclone/rollup-all@^1.25.1":
+  version "1.25.1"
+  resolved "https://registry.yarnpkg.com/@teclone/rollup-all/-/rollup-all-1.25.1.tgz#d0df73fcf1c48e079b455f71ff53291c9d3b2e38"
+  integrity sha512-o88U4QqIa4hg/561LooJcRZh1rQwTaBtPH3nmrcVSybGU33REjQKNmfEVDnCmkVYlyVUHNXb86HPN3CqlffmFw==
   dependencies:
     "@babel/core" "^7.12.17"
     "@babel/helper-define-map" "^7.12.13"

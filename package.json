@@ -5,21 +5,24 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "cjs/index",
-  "typings": "esm/index",
-  "module": "esm/index",
+  "main": "build/cjs/index",
+  "typings": "build/esm/index",
+  "module": "build/esm/index",
   "author": "Harrison Ifeanyichukwu <harrisonifeanyichukwu@gmail.com> (https://github.com/teclone)",
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/teclone/react-use-effect-cleaner.git"
   },
+  "files": [
+    "build"
+  ],
   "scripts": {
     "build": "rollup-all --formats esm,cjs",
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@teclone/rollup-all": "^1.24.2",
+    "@teclone/rollup-all": "^1.25.1",
     "@types/jest": "24.0.11",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
