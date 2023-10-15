@@ -32,7 +32,7 @@ export interface CreateEffectCleanerOpts {
  */
 export const createEffectCleaner = <T>(
   stateModifiers: T,
-  opts: CreateEffectCleanerOpts
+  opts?: CreateEffectCleanerOpts
 ) => {
   let _stalled = false;
   const { abortController, cancelTokenSource, intervalIds, timeoutIds } =
