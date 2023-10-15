@@ -6,8 +6,8 @@
     "access": "public"
   },
   "main": "build/cjs/index",
-  "typings": "build/esm/index",
-  "module": "build/esm/index",
+  "typings": "build/es/index",
+  "module": "build/es/index",
   "author": "Harrison Ifeanyichukwu <harrisonifeanyichukwu@gmail.com> (https://github.com/teclone)",
   "license": "MIT",
   "repository": {
@@ -18,11 +18,11 @@
     "build"
   ],
   "scripts": {
-    "build": "rollup-all --formats esm,cjs",
+    "build": "rollup-all --formats es,cjs,iife",
     "release": "semantic-release"
   },
   "devDependencies": {
-    "@teclone/rollup-all": "^1.25.1",
+    "@teclone/rollup-all": "^1.28.0",
     "@types/jest": "24.0.11",
     "@typescript-eslint/eslint-plugin": "1.6.0",
     "@typescript-eslint/parser": "1.6.0",
