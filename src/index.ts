@@ -1,4 +1,5 @@
 import type { CancelTokenSource } from 'axios';
+import { noop } from './constants';
 
 export interface CreateEffectCleanerOpts {
   /**
@@ -24,6 +25,12 @@ export interface CreateEffectCleanerOpts {
   intervalIds?: {
     [p: string]: number;
   };
+
+  /**
+   * called when running effects cleanup
+   * @returns
+   */
+  callback?: () => void;
 }
 
 /**
@@ -35,8 +42,13 @@ export const createEffectCleaner = <T>(
   opts?: CreateEffectCleanerOpts
 ) => {
   let _stalled = false;
-  const { abortController, cancelTokenSource, intervalIds, timeoutIds } =
-    opts || {};
+  const {
+    abortController,
+    cancelTokenSource,
+    intervalIds,
+    timeoutIds,
+    callback = noop,
+  } = opts || {};
 
   const handler = {
     apply(stateModifier, thisArg, argArray) {
@@ -87,6 +99,8 @@ export const createEffectCleaner = <T>(
         clearTimeout(timeoutIds[key]);
       });
     }
+
+    callback();
   };
 
   return proxies;

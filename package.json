@@ -5,6 +5,7 @@
   "publishConfig": {
     "access": "public"
   },
+  "sideEffects": false,
   "main": "build/cjs/index",
   "typings": "build/es/index",
   "module": "build/es/index",
@@ -15,7 +16,7 @@
     "url": "https://github.com/teclone/react-use-effect-cleaner.git"
   },
   "files": [
-    "build"
+    "./build"
   ],
   "scripts": {
     "build": "rollup-all --formats es,cjs,iife",
