@@ -16,7 +16,7 @@
     "url": "https://github.com/teclone/react-use-effect-cleaner.git"
   },
   "files": [
-    "./build"
+    "build"
   ],
   "scripts": {
     "build": "rollup-all --formats es,cjs,iife",
